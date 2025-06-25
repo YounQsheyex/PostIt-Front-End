@@ -1,16 +1,19 @@
 import "./App.css";
-import NotLogNav from "./components/NotLogNav";
-import HeroBg from "./components/HeroBg";
-import Footer from "./components/Footer";
-import HeroDown from "./components/HeroDown";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 
 function App() {
   return (
     <>
-      <NotLogNav />
-      <HeroBg />
-      <HeroDown />
-      <Footer />
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/sign-in" element={<SignIn />} />
+        </Routes>
+      </Router>
     </>
   );
 }

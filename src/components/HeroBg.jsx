@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const HeroBg = () => {
   return (
@@ -13,12 +14,13 @@ const HeroBg = () => {
             massa velit aliquam. Molestim bibendum hnt ipsum orci, platea
             aliquam id ut.
           </p>
-          <button className="flex justify-center text-center rounded-[8px] w-[132px] h-[33px] bg-[#0086b0] text-[#fffbfb] font-[harmattan] font-[400] text-[24px] mt-10">
-            Get Started
-          </button>
+          <Link to={"/sign-up"}>
+            <button className="flex justify-center text-center rounded-[8px] w-[132px] h-[33px] bg-[#0086b0] text-[#fffbfb] font-[harmattan] font-[400] text-[24px] mt-10 cursor-pointer">
+              Get Started
+            </button>
+          </Link>
         </div>
       </div>
-    
     </div>
   );
 };
