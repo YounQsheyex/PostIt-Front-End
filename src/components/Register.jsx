@@ -5,9 +5,9 @@ import { RiCloseLargeLine } from "react-icons/ri";
 
 const Register = () => {
   return (
-    <div className="relative">
-      <div className="bg-[#f0f0f0]">
-        <div className="w-[1440px] opacity-10 flex justify-between items-center mx-auto p-5">
+    <div className="lg:relative">
+      <div className="hidden lg:block">
+        <div className="hidden lg:w-[1440px] lg:opacity-10 lg:flex lg:justify-between lg:items-center lg:mx-auto lg:p-5">
           <nav className="flex justify-between gap-10 mx-auto items-center w-[1240px] font-[harmattan]">
             <div>
               <img src={logo} alt="logo" />
@@ -29,7 +29,7 @@ const Register = () => {
             </div>
           </nav>
         </div>
-        <div className="bg w-[1440px] h-[616px] opacity-10">
+        <div className="hidden lg:block lg:bg lg:w-[1440px] lg:h-[616px] lg:opacity-10">
           <div className="w-[1240px] mx-auto font-[harmattan]">
             <div className=" w-[595px] py-20 ">
               <h1 className="text-[110px] text-[#000000] font-[700] ">
@@ -47,14 +47,14 @@ const Register = () => {
           </div>
         </div>
       </div>
-      <div className="w-[1240px] mx auto">
-        <div className="w-[653px] h-[772px]  border-0 border-[#727272] shadow-xl bg-[#fdfeff] mx-auto p-25 absolute top-2 right-0 left-0 z-40">
+      <div className="w-[320px] mx-auto lg:w-[1240px] lg:mx-auto">
+        <div className="w-[300px] lg:w-[653px] lg:h-[772px]  border-0 border-[#727272] lg:shadow-xl bg-[#fdfeff] lg:mx-auto   lg:p-25 lg:absolute lg:top-2 lg:right-0 lg:left-0 lg:z-40">
           <Link to={"/"}>
-            <div className="absolute top-10 right-10 cursor-pointer ">
+            <div className="absolute top-10 right-50 lg:right-10 cursor-pointer">
               <RiCloseLargeLine />
             </div>
           </Link>
-          <form className="w-[415px] h-[557px]">
+          <form className="w-[310px] lg:w-[415px] lg:h-[473px]  mt-20 lg:mt-0">
             <h1 className="mt-5 text-[35px] text-[#292929] text-center font-[700] font-[harmattan]">
               Join Post<span className="text-[#0086b0]">it</span>.
             </h1>
@@ -62,7 +62,7 @@ const Register = () => {
               Enter your email address to create an account on Post
               <span className="text-[#0086b0]">it</span>
             </p>
-            <div className="w-[415px] h-[64px] mx-auto flex flex-col items-center mt-10 ">
+            <div className="w-[280px] lg:w-[415px] h-[64px] mx-auto flex flex-col items-center mt-10 ">
               <label
                 htmlFor="userName"
                 className="font-[harmattan] font-[400] text-[18px] text-[#292929] mb-2"
@@ -75,7 +75,7 @@ const Register = () => {
                 className="w-full border-b-[1px] border-[#727272] text-center focus:outline-none"
               />
             </div>
-            <div className="w-[415px] h-[64px] mx-auto flex flex-col items-center mt-10 ">
+            <div className="w-[280px] lg:w-[415px] h-[64px] mx-auto flex flex-col items-center mt-10 ">
               <label
                 htmlFor="email"
                 className="font-[harmattan] font-[400] text-[18px] text-[#292929] mb-2"
@@ -88,7 +88,7 @@ const Register = () => {
                 className="w-full border-b-[1px] border-[#727272] text-center focus:outline-none"
               />
             </div>
-            <div className="w-[415px] h-[64px] mx-auto flex flex-col items-center mt-10 ">
+            <div className="w-[280px] lg:w-[415px] h-[64px] mx-auto flex flex-col items-center mt-10 ">
               <label
                 htmlFor="password"
                 className="font-[harmattan] font-[400] text-[18px] text-[#292929] mb-2"
@@ -101,13 +101,13 @@ const Register = () => {
                 className="w-full border-b-[1px] border-[#727272] text-center focus:outline-none"
               />
             </div>
-            <div className=" mt-10">
-              <button className="bg-[#0086b0] font-[700] font-[harmattan]  w-[415px]  h-[47px] rounded-[8px] text-[#ffffff] text-center text-[25px] cursor-pointer">
+            <div className="mt-5 lg:mt-10 ml-5 lg:ml-0">
+              <button className="bg-[#0086b0] font-[700] font-[harmattan] w-[280px] lg:w-[415px] h-[47px] rounded-[8px] text-[#ffffff] text-center text-[25px] cursor-pointer">
                 Continue
               </button>
             </div>
             <Link to={"/sign-in"}>
-              <h1 className=" mt-10 text-[22px] text-[#292929] font-[700] font-[harmattan] text-center ">
+              <h1 className="mt-2 lg:mt-10 text-[22px] text-[#292929] font-[700] font-[harmattan] text-center ">
                 Already have an account?
                 <span className="text-[#0086b0]"> Sign In</span>
               </h1>

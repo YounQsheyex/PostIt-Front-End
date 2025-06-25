@@ -4,14 +4,14 @@ import logo from "../assets/Postit.png";
 
 const NotLogNav = () => {
   return (
-    <div className="w-[1440px] flex justify-between items-center mx-auto p-5">
-      <nav className="flex justify-between gap-10 mx-auto items-center w-[1240px] font-[harmattan]">
+    <div className="w-sm lg:w-[1440px] flex justify-between items-center mx-auto p-5">
+      <nav className="w-sm lg:w-[1240px] lg:flex lg:justify-between gap-10 lg:gap-0mx-auto items-center  font-[harmattan]">
         <Link to={"/"}>
           <div>
             <img src={logo} alt="logo" />
           </div>
         </Link>
-        <div className="w-[418px] flex items-center justify-between">
+        <div className="hidden lg:w-[418px] lg:flex lg:items-center justify-between">
           <a href="/" className="text-[24px] font-[400] text-[#292929]">
             Stories
           </a>
