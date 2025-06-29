@@ -6,6 +6,7 @@ import SignUp from "./pages/SignUp";
 import WelcomePage from "./pages/WelcomePage";
 import CreateStory from "./pages/CreateStory";
 import UpdateStory from "./pages/UpdateStory";
+import ViewSinglePost from "./pages/ViewSinglePost";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/welcome" element={<WelcomePage />} />
           <Route path="/create-story" element={<CreateStory />} />
           <Route path="/update-story" element={<UpdateStory />} />
+          <Route path="/view-post" element={<ViewSinglePost />} />
         </Routes>
       </Router>
     </>
