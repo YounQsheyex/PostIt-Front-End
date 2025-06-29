@@ -14,7 +14,7 @@ const HeroLoggedIn = () => {
             massa velit aliquam. Molestim bibendum hnt ipsum orci, platea
             aliquam id ut.
           </p>
-          <div className="mt-5 w-[480px] flex flex-col lg:flex lg:flex-row lg:justify-between lg:items-center gap-2 lg:gap-0 ">
+          <div className="mt-5 w-[280px] lg:w-[480px] flex flex-col lg:flex lg:flex-row lg:justify-between lg:items-center gap-2 lg:gap-0 ">
             <button className="w-[230px] h-[53px] rounded-[5px] bg-[#0086b0] font-[700] text-[30px] font-[harmattan] text-[#f0f8ff] cursor-pointer">
               My Stories
             </button>

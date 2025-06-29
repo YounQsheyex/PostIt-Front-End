@@ -6,10 +6,10 @@ import { FaArrowRight } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="w-[350px] mx-auto lg:w-full bg-[#292929] mt-10">
-      <div className="w-sm lg:w-[1240px] mx-auto py-10">
+    <div className="w-[380px] mx-auto lg:w-full bg-[#292929] mt-10">
+      <div className="w-full lg:w-[1240px] mx-auto py-10">
         <div className="flex flex-col lg:flex lg:flex-row justify-between items-center">
-          <div className="w-sm px-5 lg:px-0 lg:w-[427px]">
+          <div className="w-full px-5 lg:px-0 lg:w-[427px]">
             <h1 className="font-[700] font-[harmattan] text-[24px] text-[#ffffff]">
               About Post
               <span className="font-[700] text-[24px] text-[#0086b0]">it</span>.
@@ -21,7 +21,7 @@ const Footer = () => {
               que maeae tortoere necsem commodo ac.
             </p>
           </div>
-          <div className="w-sm lg:w-[290px] px-5 lg:px-0 mt-5 lg:mt-0">
+          <div className="w-full lg:w-[290px] px-5 lg:px-0 mt-5 lg:mt-0">
             <h1 className="font-[700] font-[harmattan] text-[24px] text-[#fdfeff]">
               Quick Menu
             </h1>
