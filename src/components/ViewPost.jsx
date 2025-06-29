@@ -40,7 +40,7 @@ const ViewPost = () => {
           className="w-full lg:w-[1239px] object-cover lg:h-[538px] rounded-[8px]"
         />
       </div>
-      <div className="w-full px-3 lg:px-0 lg:w-[1238px] mx-auto h-[879px] font-[Open_Sans] font-[400] text-[15px] lg:text-[27px] text-[#7b7b7b] mt-10">
+      <div className="w-full px-3 lg:px-0 lg:w-[1238px] mx-auto lg:h-[879px] font-[Open_Sans] font-[400] text-[15px] lg:text-[27px] text-[#7b7b7b] mt-10">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada
           neque, vitae arcu elit amet arcu. Non quam dignissim blandit lectus
@@ -74,15 +74,15 @@ const ViewPost = () => {
           porttitor faucibus sed.
         </p>
       </div>
-      <div className="w-full px-3 lg:px-0 lg:w-[1240px] h-[441px] flex flex-col items-center gap-5 lg:gap-0 lg:flex lg:flex-row lg:justify-between lg:p-5 mt-17 lg:mt-10">
-        <div className="w-full lg:w-[538px] lg:h-[421px] rounded-[8px]">
+      <div className="w-full md:w-full md:flex md:flex-row px-3 lg:px-0 lg:w-[1240px] h-[441px] flex flex-col items-center gap-5 lg:gap-0 lg:flex lg:flex-row lg:justify-between lg:p-5 md:mt-0 lg:mt-10">
+        <div className="w-full md:w-full lg:w-[538px] lg:h-[421px] rounded-[8px]">
           <img
             src={viewDbg}
             alt="bg"
-            className="w-full lg:w-[538px] lg:h-[421px] object-cover rounded-[8px]"
+            className="w-full md:w-full lg:w-[538px] lg:h-[421px] object-cover rounded-[8px]"
           />
         </div>
-        <div className="w-full lg:w-[621px] lg:h-[441px]">
+        <div className="w-full md:w-full lg:w-[621px] lg:h-[441px]">
           <div>
             <h1 className="font-[700] font-[harmattan] text-[30px] lg:text-[50px] text-[#292929]">
               Fintech Companies in Nigeria
@@ -125,7 +125,7 @@ const ViewPost = () => {
             Share post;
           </h1>
         </div>
-        <div className="w-full lg:w-[190px] flex gap-2 items-center lg:justify-between">
+        <div className="w-full lg:w-[190px] flex gap-2 lg:gap-0 items-center lg:justify-between">
           <img
             src={twitter}
             alt=""
@@ -139,7 +139,7 @@ const ViewPost = () => {
           <img
             src={whatsapp}
             alt=""
-            className="w-[20px] h-[20px] lg:w-[37px]"
+            className="w-[20px] h-[20px] lg:w-[37px] lg:h-[37px]"
           />
         </div>
       </div>
