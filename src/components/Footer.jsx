@@ -45,10 +45,15 @@ const Footer = () => {
             </h1>
             <div className="relative">
               <input
+                id="subscribe"
                 type="text"
-                className="relative w-[300px] lg:w-[337px] h-[39px] rounded-[2px] bg-[#fdfeff]"
+                placeholder="Email address"
+                className="relative w-[300px] lg:w-[337px] h-[39px] rounded-[2px] bg-[#fdfeff] placeholder:text-[#7e7f7f] placeholder:text-[14px] px-2"
               />
-              <button className="flex items-center gap-1.5 p-2 w-[103px] h-[27px] bg-[#0086b0] text-[12px] text-[#fdfeff] font-[600] font-[Open_Sans] rounded-[2px] absolute right-12 lg:right-2 top-1.5">
+              <button
+                id="subscribe"
+                className="flex items-center gap-1.5 p-2 w-[103px] h-[27px] bg-[#0086b0] text-[12px] text-[#fdfeff] font-[600] font-[Open_Sans] rounded-[2px] absolute right-12 lg:right-2 top-1.5"
+              >
                 SubScribe
                 <FaArrowRight />
               </button>
