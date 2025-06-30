@@ -22,15 +22,15 @@ const NavLoggedIn = () => {
             className="dropdown-content menu bg-white rounded-box z-5 w-52 p-2 shadow-sm"
           >
             <li>
-              <Link to={""} className="text-[24px] font-[400] text-[#292929]">
-                Stories
-              </Link>
-            </li>
-            <li>
               <Link
                 to={"/welcome"}
                 className="text-[24px] font-[400] text-[#292929]"
               >
+                Stories
+              </Link>
+            </li>
+            <li>
+              <Link to={""} className="text-[24px] font-[400] text-[#292929]">
                 Contact
               </Link>
             </li>
