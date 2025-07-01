@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 
 const ViewFeeds = () => {
   return (
-    <div>
+    <div className="animate__animated animate__fadeIn">
       <NavLoggedIn />
       <AllPostHero />
       <AllPost />

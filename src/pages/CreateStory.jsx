@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 
 const CreateStory = () => {
   return (
-    <div>
+    <div className="animate__animated animate__fadeIn">
       <NavLoggedIn />
       <CreateStoryForm />
       <Footer />

@@ -19,11 +19,11 @@ function App() {
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/welcome" element={<WelcomePage />} />
+          <Route path="/my-story" element={<MyStories />} />
           <Route path="/create-story" element={<CreateStory />} />
           <Route path="/update-story" element={<UpdateStory />} />
-          <Route path="/view-post" element={<ViewSinglePost />} />
-          <Route path="/my-story" element={<MyStories />} />
           <Route path="/view-feeds" element={<ViewFeeds />} />
+          <Route path="/view-post" element={<ViewSinglePost />} />
         </Routes>
       </Router>
     </>

@@ -1,6 +1,7 @@
 import React from "react";
 import { HiArrowSmallRight } from "react-icons/hi2";
 import { views } from "../../view.js";
+import { Link } from "react-router-dom";
 
 const tagbg = (tags) => {
   if (tags === "Technology") {
@@ -60,10 +61,12 @@ const AllPost = () => {
                 </p>
               </div>
               <div className="w-[113px] h-[27px] flex gap-1.5 items-center text-[#0086b0] font-[600] ">
-                <HiArrowSmallRight />
-                <button className="text-[#0086b0] text-[14px] font-[600] font-[Open_Sans] cursor-pointer">
-                  Read More...
-                </button>
+                <Link to={"/view-post"}>
+                  <HiArrowSmallRight />
+                  <button className="text-[#0086b0] text-[14px] font-[600] font-[Open_Sans] cursor-pointer">
+                    Read More...
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
