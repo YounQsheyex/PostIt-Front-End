@@ -30,7 +30,11 @@ const AllStories = () => {
             <button
               key={i}
               onClick={() => setFilter(stored)}
-              className={`font-[harmattan] font-[400] text-[37px] text-[#757575] cursor-pointer`}
+              className={`font-[harmattan] font-[400] text-[37px] ${
+                filter === stored
+                  ? "bg-[#0086b0] text-white rounded-[10px] p-1.5"
+                  : "bg-none text-[#757575]"
+              } cursor-pointer`}
             >
               {stored}
             </button>

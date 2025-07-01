@@ -8,6 +8,7 @@ import CreateStory from "./pages/CreateStory";
 import UpdateStory from "./pages/UpdateStory";
 import ViewSinglePost from "./pages/ViewSinglePost";
 import MyStories from "./pages/MyStories";
+import ViewFeeds from "./pages/ViewFeeds";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/update-story" element={<UpdateStory />} />
           <Route path="/view-post" element={<ViewSinglePost />} />
           <Route path="/my-story" element={<MyStories />} />
+          <Route path="/view-feeds" element={<ViewFeeds />} />
         </Routes>
       </Router>
     </>

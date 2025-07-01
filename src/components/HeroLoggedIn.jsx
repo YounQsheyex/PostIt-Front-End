@@ -16,14 +16,16 @@ const HeroLoggedIn = () => {
             aliquam id ut.
           </p>
           <div className="mt-5 w-[280px] lg:w-[480px] flex flex-col lg:flex lg:flex-row lg:justify-between lg:items-center gap-2 lg:gap-0 ">
-            <Link to={'/my-story'}>
+            <Link to={"/my-story"}>
               <button className="w-[230px] h-[53px] rounded-[5px] bg-[#0086b0] font-[700] text-[30px] font-[harmattan] text-[#f0f8ff] cursor-pointer">
                 My Stories
               </button>
             </Link>
-            <button className="w-[230px] h-[53px] rounded-[5px] border-[1px] border-[#0086b0] font-[700] text-[30px] font-[harmattan] text-[#0086b0] cursor-pointer">
-              Go to Feed
-            </button>
+            <Link to={'/view-feeds'}>
+              <button className="w-[230px] h-[53px] rounded-[5px] border-[1px] border-[#0086b0] font-[700] text-[30px] font-[harmattan] text-[#0086b0] cursor-pointer">
+                Go to Feed
+              </button>
+            </Link>
           </div>
         </div>
         <div className="hidden lg:block w-[538px] h-[302px] lg:rotate-3">
