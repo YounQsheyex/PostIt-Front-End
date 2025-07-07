@@ -60,8 +60,11 @@ const AllPost = () => {
                   {view.description}
                 </p>
               </div>
-              <div className="w-[113px] h-[27px] flex gap-1.5 items-center text-[#0086b0] font-[600] ">
-                <Link to={"/view-post"}>
+              <div>
+                <Link
+                  to={"/view-post"}
+                  className="w-[113px] h-[27px] flex gap-1.5 items-center text-[#0086b0] font-[600] "
+                >
                   <HiArrowSmallRight />
                   <button className="text-[#0086b0] text-[14px] font-[600] font-[Open_Sans] cursor-pointer">
                     Read More...

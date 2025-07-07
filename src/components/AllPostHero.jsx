@@ -3,7 +3,7 @@ import scrabble from "../assets/scrabble.png";
 
 const AllPostHero = () => {
   return (
-    <div className="w-full h-[514px] mx-auto p-5 bg-[#f5f6f8]">
+    <div className="w-full h-[514px] mx-auto p-5 bg-[#f5f6f8] mt-2">
       <div className="w-full lg:w-[1240px] mx-auto py-15 flex justify-between">
         <div className="w-full lg:w-[540px] h-[281px]">
           <h1 className="w-full lg:w-[538px] font-[harmattan] font-[700] text-[50px] lg:text-[75px] text-[#292929]">
