@@ -23,8 +23,8 @@ const AllPost = () => {
     <div className="w-full px-5 lg:px-0 lg:w-[1240px] mt-15  mx-auto lg:flex lg:flex-wrap lg:justify-between lg:items-center">
       {views.map((view, index) => {
         return (
-          <div>
-            <div key={index} className="w-full lg:w-[381px] mb-10">
+          <div key={index}>
+            <div className="w-full lg:w-[381px] mb-10">
               <div className="relative">
                 <img
                   src={view.img}

@@ -2,8 +2,23 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/Postit.png";
 import { RiCloseLargeLine } from "react-icons/ri";
+import { registerSchema } from "../../utils/formValidator";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 const Register = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(registerSchema),
+  });
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
   return (
     <div className="lg:relative">
       <div className="hidden lg:block">
@@ -54,7 +69,10 @@ const Register = () => {
               <RiCloseLargeLine />
             </div>
           </Link>
-          <form className="w-[310px] lg:w-[415px] lg:h-[473px]  mt-20 lg:mt-0">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="w-[310px] lg:w-[415px] lg:h-[473px]  mt-20 lg:mt-0"
+          >
             <h1 className="mt-5 text-[35px] text-[#292929] text-center font-[700] font-[harmattan]">
               Join Post<span className="text-[#0086b0]">it</span>.
             </h1>
@@ -73,7 +91,13 @@ const Register = () => {
                 id="userName"
                 type="text"
                 className="w-full border-b-[1px] border-[#727272] text-center focus:outline-none"
+                {...register("userName")}
               />
+              {errors.userName && (
+                <p className="text-red-500 font-[Open_Sans] font-[400] text-[14px] mt-1">
+                  {errors.userName.message}
+                </p>
+              )}
             </div>
             <div className="w-[280px] lg:w-[415px] h-[64px] mx-auto flex flex-col items-center mt-10 ">
               <label
@@ -86,7 +110,13 @@ const Register = () => {
                 id="email"
                 type="text"
                 className="w-full border-b-[1px] border-[#727272] text-center focus:outline-none"
+                {...register("email")}
               />
+              {errors.email && (
+                <p className="text-red-500 font-[Open_Sans] font-[400] text-[14px] mt-1">
+                  {errors.email.message}
+                </p>
+              )}
             </div>
             <div className="w-[280px] lg:w-[415px] h-[64px] mx-auto flex flex-col items-center mt-10 ">
               <label
@@ -97,9 +127,15 @@ const Register = () => {
               </label>
               <input
                 id="password"
-                type="text"
+                type="password"
                 className="w-full border-b-[1px] border-[#727272] text-center focus:outline-none"
+                {...register("password")}
               />
+              {errors.password && (
+                <p className="text-red-500 font-[Open_Sans] font-[400] text-[14px] mt-1">
+                  {errors.password.message}
+                </p>
+              )}
             </div>
             <div className="mt-5 lg:mt-10 ml-5 lg:ml-0">
               <button className="bg-[#0086b0] font-[700] font-[harmattan] w-[280px] lg:w-[415px] h-[47px] rounded-[8px] text-[#ffffff] text-center text-[25px] cursor-pointer">
