@@ -154,7 +154,7 @@ const Login = () => {
               </button>
             </div>
             {errorMsg && (
-              <div className="w-full justify-center absolute top-25  rounded-xl py-2  px-4 bg-[#FF37370D] border border-[#ff3737] text-[#ff3737] flex items-center gap-3">
+              <div className="w-[280px] mx-20 absolute top-12  rounded-xl py-2  px-4 bg-[#FF37370D] border border-[#ff3737] text-[#ff3737] flex items-center gap-3">
                 <PiWarningCircle size={22} />
                 <p>{errorMsg}</p>
               </div>
