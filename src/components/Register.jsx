@@ -177,7 +177,7 @@ const Register = () => {
               </button>
             </div>
             {errorMsg && (
-              <div className="w-full justify-center absolute top-25  rounded-xl py-2  px-4 bg-[#FF37370D] border border-[#ff3737] text-[#ff3737] flex items-center gap-3">
+              <div className="w-full  justify-center absolute top-9  lg:top-25  rounded-xl py-2  px-4 bg-[#FF37370D] border border-[#ff3737] text-[#ff3737] flex items-center gap-3">
                 <PiWarningCircle size={22} />
                 <p>{errorMsg}</p>
               </div>
