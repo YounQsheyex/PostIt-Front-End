@@ -53,7 +53,7 @@ const NotLogNav = () => {
 
         <div className="hidden lg:w-[418px] lg:flex lg:items-center justify-between">
           <Link
-            to={"/welcome"}
+            to={"/sign-up"}
             className="text-[24px] font-[400] text-[#292929]"
           >
             Stories
