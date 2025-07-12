@@ -5,8 +5,18 @@ import { RiCloseLargeLine } from "react-icons/ri";
 import { registerSchema } from "../../utils/formValidator";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { axiosInstance } from "../../utils/axiosInstance";
+import { useState } from "react";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import { PiWarningCircle } from "react-icons/pi";
+import { ClipLoader } from "react-spinners";
 
 const Register = () => {
+  const redirect = useNavigate();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+
   const {
     register,
     handleSubmit,
@@ -15,8 +25,25 @@ const Register = () => {
     resolver: yupResolver(registerSchema),
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    setIsSubmitting(true);
+    try {
+      const response = await axiosInstance.post("/auth/sign-up", {
+        ...data,
+      });
+
+      if (response.status === 201) {
+        console.log(response.data);
+        toast.success("Sign Up Successful");
+        redirect("/sign-in");
+      }
+    } catch (error) {
+      console.log(error);
+      setErrorMsg(error?.response?.data.message || "Sign-up Failed");
+      toast.error("Account Already Exist");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -71,7 +98,7 @@ const Register = () => {
           </Link>
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="w-[310px] lg:w-[415px] lg:h-[473px]  mt-20 lg:mt-0"
+            className="relative w-[310px] lg:w-[415px] lg:h-[473px]  mt-20 lg:mt-0"
           >
             <h1 className="mt-5 text-[35px] text-[#292929] text-center font-[700] font-[harmattan]">
               Join Post<span className="text-[#0086b0]">it</span>.
@@ -88,14 +115,14 @@ const Register = () => {
                 Username
               </label>
               <input
-                id="userName"
+                id="username"
                 type="text"
                 className="w-full border-b-[1px] border-[#727272] text-center focus:outline-none"
-                {...register("userName")}
+                {...register("username")}
               />
-              {errors.userName && (
+              {errors.username && (
                 <p className="text-red-500 font-[Open_Sans] font-[400] text-[14px] mt-1">
-                  {errors.userName.message}
+                  {errors.username.message}
                 </p>
               )}
             </div>
@@ -138,17 +165,30 @@ const Register = () => {
               )}
             </div>
             <div className="mt-5 lg:mt-10 ml-5 lg:ml-0">
-              <button className="bg-[#0086b0] font-[700] font-[harmattan] w-[280px] lg:w-[415px] h-[47px] rounded-[8px] text-[#ffffff] text-center text-[25px] cursor-pointer">
-                Continue
+              <button
+                disabled={isSubmitting}
+                className="bg-[#0086b0] font-[700] font-[harmattan] w-[280px] lg:w-[415px] h-[47px] rounded-[8px] text-[#ffffff] text-center text-[25px] cursor-pointer"
+              >
+                {isSubmitting ? (
+                  <ClipLoader color="#faf9fb" size={20} />
+                ) : (
+                  "Continue"
+                )}
               </button>
             </div>
-            <Link to={"/sign-in"}>
-              <h1 className="mt-2 lg:mt-10 text-[22px] text-[#292929] font-[700] font-[harmattan] text-center ">
-                Already have an account?
-                <span className="text-[#0086b0]"> Sign In</span>
-              </h1>
-            </Link>
+            {errorMsg && (
+              <div className="w-full justify-center absolute top-25  rounded-xl py-2  px-4 bg-[#FF37370D] border border-[#ff3737] text-[#ff3737] flex items-center gap-3">
+                <PiWarningCircle size={22} />
+                <p>{errorMsg}</p>
+              </div>
+            )}
           </form>
+          <Link to={"/sign-in"}>
+            <h1 className="mt-2 lg:mt-10 text-[22px] text-[#292929] font-[700] font-[harmattan] text-center ">
+              Already have an account?
+              <span className="text-[#0086b0]"> Sign In</span>
+            </h1>
+          </Link>
         </div>
       </div>
     </div>

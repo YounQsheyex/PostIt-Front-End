@@ -5,8 +5,18 @@ import { RiCloseLargeLine } from "react-icons/ri";
 import { loginSchema } from "../../utils/formValidator";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
+import { axiosInstance } from "../../utils/axiosInstance";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { PiWarningCircle } from "react-icons/pi";
+import { ClipLoader } from "react-spinners";
+import { toast } from "react-toastify";
 
 const Login = () => {
+  const redirect = useNavigate();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+
   const {
     register,
     handleSubmit,
@@ -15,8 +25,24 @@ const Login = () => {
     resolver: yupResolver(loginSchema),
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    setIsSubmitting(true);
+    try {
+      const response = await axiosInstance.post("/auth/sign-in", {
+        ...data,
+      });
+      if (response.status === 200) {
+        console.log(response.data);
+        toast.success("login Sucessful");
+        redirect("/welcome");
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed to Login");
+      setErrorMsg(error?.response?.data.message || "Login Failed");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -71,7 +97,7 @@ const Login = () => {
           </Link>
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="w-[310px] lg:w-[415px] lg:h-[473px]  mt-30 lg:mt-0"
+            className="relative w-[310px] lg:w-[415px] lg:h-[473px]  mt-30 lg:mt-0"
           >
             <h1 className="mt-5 text-[35px] text-[#292929] text-center font-[700] font-[harmattan]">
               Welcome Back
@@ -116,12 +142,25 @@ const Login = () => {
               )}
             </div>
             <div className=" mt-10 ml-5 lg:ml-0">
-              <button className="bg-[#0086b0] font-[700] font-[harmattan] w-[280px] lg:w-[415px] h-[47px] rounded-[8px] text-[#ffffff] text-center text-[25px] cursor-pointer">
-                Continue
+              <button
+                disabled={isSubmitting}
+                className="bg-[#0086b0] font-[700] font-[harmattan] w-[280px] lg:w-[415px] h-[47px] rounded-[8px] text-[#ffffff] text-center text-[25px] cursor-pointer"
+              >
+                {isSubmitting ? (
+                  <ClipLoader color="#faf9fb" size={20} />
+                ) : (
+                  "Login"
+                )}
               </button>
             </div>
+            {errorMsg && (
+              <div className="w-full justify-center absolute top-25  rounded-xl py-2  px-4 bg-[#FF37370D] border border-[#ff3737] text-[#ff3737] flex items-center gap-3">
+                <PiWarningCircle size={22} />
+                <p>{errorMsg}</p>
+              </div>
+            )}
             <Link to={"/sign-up"}>
-              <h1 className=" mt-10 text-[22px] text-[#292929] font-[700] font-[harmattan] text-center ">
+              <h1 className=" mt-5 text-[22px] text-[#292929] font-[700] font-[harmattan] text-center ">
                 No account?
                 <span className="text-[#0086b0]"> Sign Up</span>
               </h1>
